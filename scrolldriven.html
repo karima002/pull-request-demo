@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="scroll-bar"></div>
+
+        <section class="main-content">
+            <img src="../assets/hero.png" alt="background image of buildings">
+            <h1>Scroll driven animation</h1>
+        </section>
+
+        <section>
+            <p>Scroll to explore more about scroll-driven animations and their use in modern web design. Learn how motion and interactivity can enhance the user experience.</p>
+            <img class="image-container" src="../assets/building.png">
+        </section>
+
+        <section>
+            <p> Whether you're adding subtle movements or telling complete stories, scroll animations are a powerful tool in your design arsenal. Incorporating these animations can make your site unique and engaging.</p>
+            <img class="image-container" src="../assets/building2.png">
+        </section>
+
+        <section >
+            <h1 class="h1-code">Scroll-Driven Animation on images (CSS Only)</h1>
+            <p class="p-code">To create a smooth scroll-driven animation on the image, I used CSS features like <code>animation-timeline</code> and <code>view()</code>, which allow animations to be triggered based on the scroll position. <code>Animation-timeline</code> triggers animation when the element enters the viewport. Here is the CSS used specifically for the images:</p>
+            <pre>
+                <code>
+                    @media (prefers-reduced-motion: no-preference) {
+                        .image-container {
+                            position: absolute;
+                            top: 25%;
+                            left: 25%;
+                            width: 50vw;
+                            height: 50vh;
+                            animation: fade-in linear;
+                            animation-timeline: view();   
+                            animation-range: entry; 
+                        }
+
+                        @keyframes fade-in {
+                            from {
+                                scale: 0.7;
+                                opacity: 0;
+                            }
+
+                            to {
+                                scale: 1;
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <div class="background"></div>
+            <h1 class="h1-code">Sources Used</h1>
+            <p class="p-code">While building this website, I relied on a few sources. Below is a list of the main resources I consulted:</p>
+            <ul>
+                <li>
+                    <a href="https://scroll-driven-animations.style/">Scroll-Driven-Animations</a>: For examples and explenation about scroll-driven animations.
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.com/watch?v=5noL_qFobm0&list=PLNYkxOF6rcICM3ttukz9x5LCNOHfWBVnn">Youtube Chrome for developers</a>: For a playlist of Bramus van Damme explaining all about scroll-driven animations.
+                </li>
+            </ul>
+
+            <article class="suggestions">            
+                <h1>Suggestions for sroll driven animatons sources?</h1>
+                <p>Do you have a useful resource for scroll-driven animations? Share your suggestion with us by leaving your name!*</p>
+            </article>
+
+            <form method="post" action="/scrolldriven">
+                
+                <h2>Name</h2>
+                <input type="text" name="name" required/>
+
+                <h2>Url</h2>
+                <input type="text" name="description" required/>
+
+                <button type="submit" id="submit-button" class="submit-button" >Submit</button>
+            </form>
+            
+        </section>
+    </main>
+</body>
+</html>
+
+<style>
+
+@media (prefers-reduced-motion: no-preference) {
+    .scroll-bar {
+        height: .6em;
+        position: fixed;
+        top: 0;
+        background-color: darkblue;
+        width: 100%;
+        z-index: 1;
+        transform-origin: left;
+        scale: 0 1;
+
+        animation: scroll linear;
+        animation-timeline: scroll(y);
+    }
+    
+    @keyframes scroll {
+        to {
+            scale: 1 1;
+        }
+    }
+}
+
+main {
+    background-color: var(--neutral-color-black);
+}
+
+img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+h1, p {
+    color: var(--neutral-color-white);
+    font-family: var(--font-inter-regular);
+}
+
+code {
+    color: var(--neutral-color-white);
+}
+
+
+
+</style>
