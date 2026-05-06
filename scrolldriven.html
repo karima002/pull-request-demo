@@ -59,84 +59,136 @@
             </pre>
         </section>
 
-        <section>
-            <div class="background"></div>
-            <h1 class="h1-code">Sources Used</h1>
-            <p class="p-code">While building this website, I relied on a few sources. Below is a list of the main resources I consulted:</p>
-            <ul>
-                <li>
-                    <a href="https://scroll-driven-animations.style/">Scroll-Driven-Animations</a>: For examples and explenation about scroll-driven animations.
-                </li>
-
-                <li>
-                    <a href="https://www.youtube.com/watch?v=5noL_qFobm0&list=PLNYkxOF6rcICM3ttukz9x5LCNOHfWBVnn">Youtube Chrome for developers</a>: For a playlist of Bramus van Damme explaining all about scroll-driven animations.
-                </li>
-            </ul>
-
-            <article class="suggestions">            
-                <h1>Suggestions for sroll driven animatons sources?</h1>
-                <p>Do you have a useful resource for scroll-driven animations? Share your suggestion with us by leaving your name!*</p>
-            </article>
-
-            <form method="post" action="/scrolldriven">
-                
-                <h2>Name</h2>
-                <input type="text" name="name" required/>
-
-                <h2>Url</h2>
-                <input type="text" name="description" required/>
-
-                <button type="submit" id="submit-button" class="submit-button" >Submit</button>
-            </form>
+        <form method="post" action="/scrolldriven">
             
-        </section>
+            <h2>Name</h2>
+            <input type="text" name="name" required/>
+
+            <h2>Url</h2>
+            <input type="text" name="description" required/>
+
+            <button type="submit" id="submit-button" class="submit-button" >Submit</button>
+        </form>
     </main>
 </body>
 </html>
 
 <style>
-
-@media (prefers-reduced-motion: no-preference) {
-    .scroll-bar {
-        height: .6em;
-        position: fixed;
-        top: 0;
-        background-color: darkblue;
-        width: 100%;
-        z-index: 1;
-        transform-origin: left;
-        scale: 0 1;
-
-        animation: scroll linear;
-        animation-timeline: scroll(y);
+    main {
+        background-color: var(--neutral-color-black);
     }
-    
-    @keyframes scroll {
+
+    @media (prefers-reduced-motion: no-preference) {
+        .scroll-bar {
+            height: .6em;
+            position: fixed;
+            top: 0;
+            background-color: darkblue;
+            width: 100%;
+            z-index: 1;
+            transform-origin: left;
+            scale: 0 1;
+
+            animation: scroll linear;
+            animation-timeline: scroll(y);
+        }
+        
+        @keyframes scroll {
+            to {
+                scale: 1 1;
+            }
+        }
+    }
+
+
+    @media (prefers-reduced-motion: no-preference) {
+        .main-content {
+            animation: fade-out linear;
+            animation-timeline: view();
+            animation-range: exit 20em;
+        }
+
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    h1, p {
+        color: var(--neutral-color-white);
+        font-family: var(--font-inter-regular);
+        text-align: center;
+        padding: 1em;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+    }
+
+    code {
+        color: var(--neutral-color-white);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        color: var(--neutral-color-white);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+    .image-container {
+        animation: fade-in linear;
+        animation-timeline: view();  
+        animation-range: entry;
+    }
+
+    @keyframes fade-in {
+        from {
+            scale: 0.7;
+            opacity: 0;
+        }
+
         to {
-            scale: 1 1;
+            scale: 1;
+            opacity: 1;
         }
     }
 }
 
-main {
-    background-color: var(--neutral-color-black);
-}
+    form input[type="text"] {
+        width: 25rem;
+        padding: .8em;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
 
-img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
+    #submit-button {
+        background-color: white;
+        color: black;
+        text-transform: uppercase;
+        margin: 1em 0 1em 0;
+        padding: 1em 2em 1em 2em;
+        max-width: 13em;
+        border: 1px solid white;
+        border-radius: .2em;
+            &:hover {
+                border: 1px solid darkblue;
+                background-color: darkblue;
+                color: white;
+                cursor: pointer;
+                transition-timing-function: ease-in; /*de animatie begint langzaam en versnelt naar het einde toe.*/
+                transition: .5s; /*duur van de animatie in 0.5 seconden*/
+            }
 
-h1, p {
-    color: var(--neutral-color-white);
-    font-family: var(--font-inter-regular);
-}
-
-code {
-    color: var(--neutral-color-white);
-}
-
-
-
+    }
 </style>
