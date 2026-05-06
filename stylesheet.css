@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Inter Light';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Inter Regular';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter Italic Regular';
+    src: url('../fonts/Inter-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter Medium';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Inter semiBold';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Inter Bold';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 700;
+}
+
+body {
+    --neutral-color-black: #000000;
+    --neutral-color-white: #FFFFFF;
+    --accent-color-darkgreen: #3A3C34;
+
+    --font-inter-light: 'Inter Light', sans-serif;
+    --font-inter-regular: 'Inter Regular', sans-serif;
+    --font-inter-italic-regular: 'Inter Italic Regular', sans-serif;
+    --font-inter-medium: 'Inter Medium', sans-serif;
+    --font-inter-semiBold: 'Inter SemiBold', sans-serif;
+    --font-inter-bold: 'Inter Bold', sans-serif;
+
+    --font-size-heading: 5.5rem; /* 5.5 * 16px = 88px */
+    --font-size-xxl: 2.5rem;   /* 2.5 * 16px = 40px */
+    --font-size-xl: 2rem;   /* 2 * 16px = 32px */
+    --font-size-l: 1.5rem;    /* 1.5 * 16px = 24px */
+    --font-size-m: 1.25rem;   /* 1.25 * 16px = 20px */
+    --font-size-s: 1rem;      /* 1 * 16px = 16px */
+    --font-size-xs: 0.875rem; /* 0.875 * 16px = 14px */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
