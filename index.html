@@ -1,11 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEMO HERE WE GO</title>
-</head>
-<body>
-    
-</body>
-</html>
+<main class="page" id="page">
+    <nav>
+      <strong>View Transitions</strong>
+      <button id="toggle">Change scene</button>
+    </nav>
+  
+    <section class="hero">
+      <div class="copy">
+        <p id="label">Morning mode</p>
+        <h1 id="title">Focus starts here.</h1>
+        <p id="text">A calm layout transition powered by one DOM update.</p>
+      </div>
+  
+      <div class="orb" id="orb"></div>
+    </section>
+  </main>
+
+  <script>
+
+const page = document.querySelector("#page");
+const toggle = document.querySelector("#toggle");
+const label = document.querySelector("#label");
+const title = document.querySelector("#title");
+const text = document.querySelector("#text");
+
+function changeScene() {
+  const isNight = page.classList.toggle("night");
+
+  label.textContent = isNight ? "Night mode" : "Morning mode";
+  title.textContent = isNight
+    ? "Ideas glow after dark."
+    : "Focus starts here.";
+
+  text.textContent = isNight
+    ? "The same DOM nodes morph between scenes using named transitions."
+    : "A calm layout transition powered by one DOM update.";
+
+  toggle.textContent = isNight ? "Back to morning" : "Change scene";
+}
+
+toggle.addEventListener("click", () => {
+  if (!document.startViewTransition) {
+    changeScene();
+    return;
+  }
+
+  document.startViewTransition(changeScene);
+});
+  </script>
+
+  <style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f8fafc;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 2rem;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at 80% 20%, #fde68a, transparent 28rem),
+    linear-gradient(135deg, #e0f2fe, #f8fafc);
+}
+
+.page.night {
+  color: #f8fafc;
+  background:
+    radial-gradient(circle at 80% 20%, #6366f1, transparent 28rem),
+    linear-gradient(135deg, #020617, #1e1b4b);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  align-items: center;
+  gap: 3rem;
+}
+
+.copy {
+  view-transition-name: copy;
+}
+
+#label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  opacity: 0.7;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.9;
+  margin: 0;
+}
+
+#text {
+  max-width: 36rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.orb {
+  width: 320px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #facc15, #fb923c);
+  box-shadow: 0 30px 90px #f59e0b66;
+  view-transition-name: orb;
+}
+
+.page.night .orb {
+  border-radius: 32%;
+  background: linear-gradient(135deg, #818cf8, #c084fc);
+  box-shadow: 0 30px 90px #6366f166;
+  transform: rotate(25deg);
+}
+
+::view-transition-group(root),
+::view-transition-group(copy),
+::view-transition-group(orb) {
+  animation-duration: 800ms;
+  animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+}
+
+::view-transition-old(copy) {
+  animation: slide-out 350ms ease both;
+}
+
+::view-transition-new(copy) {
+  animation: slide-in 550ms ease both;
+}
+
+::view-transition-old(orb) {
+  animation: pop-out 450ms ease both;
+}
+
+::view-transition-new(orb) {
+  animation: pop-in 700ms ease both;
+}
+
+@keyframes slide-out {
+  to {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+}
+
+@keyframes pop-out {
+  to {
+    opacity: 0;
+    transform: scale(0.7) rotate(-20deg);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(1.25) rotate(40deg);
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .orb {
+    width: min(280px, 70vw);
+  }
+}
+  </style>
