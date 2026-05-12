@@ -1,7 +1,8 @@
 # Pull request demo
 Demo pull requests: Hoe werken wij met Pull requests, branches aanmaken via issues, merge conflicten en PR templates?
 
-# Link naar de presentatie
+# [Link naar de presentatie](https://canva.link/euk3zfmjd3k2k46)
+
 
 # Bronnen
 - [About branches](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
