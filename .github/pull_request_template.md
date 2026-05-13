@@ -12,7 +12,7 @@ Gerelateerd aan issue #8 <!--Aan welke issue is de PR gerelateerd? -->
 
 ### Accessibility
 - [ ] Test de toegankelijkheid met een WCAG audit en handmatige test
-- [ ] Test de toegankelijkheid met de keyboard en screenreader 
+- [ ] Test de toegankelijkheid met keyboard
       
 ### Performance
 - [ ] Test de performance met behulp van de Performance audit deeltaak
@@ -24,6 +24,7 @@ Gerelateerd aan issue #8 <!--Aan welke issue is de PR gerelateerd? -->
 
 ## Overige testen
 - [ ] User test
+- [ ] Screenreader test
 - [ ] Browser test
 - [ ] Device test
 - [ ] HTML Validator
