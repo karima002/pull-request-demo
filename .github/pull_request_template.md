@@ -29,6 +29,7 @@ Gerelateerd aan issue #8 <!--Aan welke issue is de PR gerelateerd? -->
 - [ ] Device test
 - [ ] HTML Validator
 
+<!-- Leg uit hoe je hebt getest, wat daarin naar voren is gekomen en hoe je het hebt opgelost -->
 
 ## Images/Videos
 <!--Voeg hier foto's en/of videos toe van wat je hebt gemaakt -->
