@@ -12,7 +12,8 @@ Gerelateerd aan issue #8 <!--Aan welke issue is de PR gerelateerd? -->
 
 ### Accessibility
 - [ ] Test de toegankelijkheid met een WCAG audit en handmatige test
-
+- [ ] Test de toegankelijkheid met de keyboard en screenreader 
+      
 ### Performance
 - [ ] Test de performance met behulp van de Performance audit deeltaak
 
@@ -21,13 +22,11 @@ Gerelateerd aan issue #8 <!--Aan welke issue is de PR gerelateerd? -->
 - [ ] Test de Baseline CSS 
 - [ ] Test de enhancements
 
-<!-- De PE test omvat ook een test op verschillende browsers en devices. -->
-
 ## Overige testen
 - [ ] User test
-- [ ] Keyboard test
+- [ ] Browser test
+- [ ] Device test
 - [ ] HTML Validator
-- [ ] Screenreader test
 
 
 ## Images/Videos
