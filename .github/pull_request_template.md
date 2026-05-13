@@ -1,5 +1,5 @@
 ## Wat verandert er?
-<!-- Geef hier een beschrijving van wat je hebt gedaan in de PR. -->
+<!-- Geef hier een beschrijving van wat je hebt gedaan in de branch. -->
 
 
 Gerelateerd aan issue #8 <!--Aan welke issue is de PR gerelateerd? -->
@@ -12,7 +12,7 @@ Gerelateerd aan issue #8 <!--Aan welke issue is de PR gerelateerd? -->
 
 ### Accessibility
 - [ ] Test de toegankelijkheid met een WCAG audit en handmatige test
-- [ ] Test de toegankelijkheid met keyboard
+- [ ] Test de toegankelijkheid met het keyboard
       
 ### Performance
 - [ ] Test de performance met behulp van de Performance audit deeltaak
@@ -31,7 +31,9 @@ Gerelateerd aan issue #8 <!--Aan welke issue is de PR gerelateerd? -->
 
 
 ## Images/Videos
-
+<!--Voeg hier foto's en/of videos toe van wat je hebt gemaakt -->
 
 ## Hoe te reviewen
+<!-- Aanvullende vragen/opmerkingen voor de reviewer -->
+
 
